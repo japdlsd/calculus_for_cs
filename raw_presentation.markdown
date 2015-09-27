@@ -21,7 +21,7 @@ tretiak - informatik, blablabla.
 
 - je to povinne 
 - je to na statniciach (!!)
-- rozvijame si mysel
+- rozvijame si mysel --> chapeme coraz narocnejsie vtipy :)
 - ???
 - PROFIT
 
@@ -41,6 +41,8 @@ Budem to robit velmi jednoducho: ukazem vam, ako vyzeraju skripta z
 predmetov z vyssich rocnikov.
 
 Zakazdym vam poviem, ktore pojmy vam vysvetli pan docent Kubacek a kedy.
+
+pokusime sa pokryt vsetky magisterske bloky.
 
 # Predmety
 

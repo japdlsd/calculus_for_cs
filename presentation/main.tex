@@ -114,8 +114,7 @@ Univerzita Komenského v Bratislave \\
 %   PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
-% # Uvod: kto som
-% tretiak - informatik, blablabla.
+\section{Úvod}
 
 \begin{frame}
 \frametitle{Na úvod: Kto som?}
@@ -127,35 +126,11 @@ Univerzita Komenského v Bratislave \\
 
 \begin{frame}
 \frametitle{O čom vám budem rozprávať?}
-% grupmy cat "I just wait to use it in real life"
+% "I just wait to use it in real life"
 \begin{figure}
 \includegraphics[height=0.8\textheight]{images/wait_to_use.jpg}
 \end{figure}
 \end{frame}
-
-
-% # Co je matalyza (1 az 3)?
-% % mozno to radsej neukazovat, a povedat to zakazdym az pri ukazkach
-% 
-% - postupnosti
-% - limity
-% - spojitost funkcii
-% - derivacie funckii
-% - Taylorov rozvoj
-% - integralny pocet
-% - nekonecne rady (sumy)
-% - diferencialne rovnice
-% - metricke priestory
-% - derivacie viacrozmernych funckii (gradient)
-
-% # Ako nas motivuju profaci?
-% 
-% - je to povinne 
-% - je z toho skuska! (pridaj ten obrazok :D)
-% - je to na statniciach (!!)
-% - rozvijame si mysel
-% - ???
-% - PROFIT
 
 \begin{frame}
 \frametitle{Ako nás motivujú vyučujúci?}
@@ -167,7 +142,6 @@ Univerzita Komenského v Bratislave \\
 \begin{frame}
 \frametitle{Ako nás motivujú vyučujúci?}
 \begin{figure}
-%\includegraphics[width=0.6\linewidth]{images/will_help_in_real_life.jpg}
 \includegraphics[height=0.8\textheight]{images/will_help_in_real_life.jpg}
 \end{figure}
 \end{frame}
@@ -178,8 +152,6 @@ Univerzita Komenského v Bratislave \\
 {\Large 2. rozvíja to našu myseľ}
 \end{center}
 \end{frame}
-
-% zaciname chapat zvlastnym vtipom
 
 \begin{frame}
 \frametitle{Ako nás motivujú vyučujúci?}
@@ -210,8 +182,6 @@ $$e = \left(1 + \dfrac{1}{\infty}\right)^{\infty}$$
 \end{figure}
 \end{frame}
 
-% Zaver z toho? Ziadne pouzitie v realnom zivote (obrazok s razcestnikom)
-
 \begin{frame}
 \frametitle{Ako nás motivujú vyučujúci?}
 \begin{center}
@@ -238,38 +208,59 @@ $$e = \left(1 + \dfrac{1}{\infty}\right)^{\infty}$$
 \end{center}
 \end{frame}
 
-% Uz v druhom rocniku (vlastne uz v letnom semestri prveho)
-% na vas spadne kopa predmetov, kde budete aplikovat teoreticke,
-% ale aj prakticke vedomosti z matematickej analyzy!
-% 
-% Teraz sa vas pokusim v tom presvedcit.
-% 
-% Budem to robit velmi jednoducho: ukazem vam, ako vyzeraju skripta z 
-% predmetov z vyssich rocnikov.
-% 
-% Zakazdym vam poviem, ktore pojmy vam vysvetli pan docent Kubacek a kedy.
-% 
-% # Predmety
-% 
-
+\section{Predmety}
 % ## UKTG !!
 
-% ## ADS, TEA, ...
-% 
-% O-notacia (staci ukazat definiciu asi)
-% 
-% ## PaS
-% 
-% najprv definicia spojitej nahodnej premennej (that will beat shit out of them!)
-% 
-% definicia gaussovskeho rozdelenia (pripadne nieco podobne), vypocet
-% strednej hodnoty gaussovskeho ci exponencialneho rozdelenia
-% 
+\subsection{Efektívne algoritmy}
+
+\begin{frame}
+\frametitle{Algoritmy a dátové štruktúry}
+\begin{block}{O-notácia}
+$$f \in O(g) \overset{def}{\Longleftrightarrow} \lim_{n\to\infty} \dfrac{f(n)}{g(n)} > 0$$
+\end{block}
+\end{frame}
+
+\subsection{Pravdepodobnosť a štatistika}
+\begin{frame}
+\frametitle{Pravdepodobnosť a štatistika}
+\pause
+\begin{block}{Spojitá náhodná premenná}
+Nech $X$ je náhodná premenná a nech existuje integrovateľná funkcia $f: \mathbb{R} \rightarrow [0, \infty)$ taká, že pre každé $x \in \mathbb{R}$ platí:
+$$F(x) = \int_{-\infty}^{x} f(t) dt$$
+Potom hovoríme, že $X$ je spojitá náhodná premenná s  hustotou $f$.
+\end{block}
+
+\begin{block}{Stredná hodnota spojitej náhodnej premennej}
+Nech $X$ je spojitá náhodná premenná s hustotou $f$ a nech 
+existuje konečný integrál $\int_{-\infty}^{+\infty}|x| f(x) dx$. 
+Potom hovoríme, že náhodná premenná $X$ má konečnú strednú hodnotu
+$$E(X) = \int_{-\infty}^{+\infty} x~f(x) dx $$
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pravdepodobnosť a štatistika}
+\begin{block}{Integrálna Moivre-Laplaceova veta}
+Nech $p \in (0, 1)$ a nech $X_1$, $X_2$, \ldots sú náhodné premenné, 
+$X_n \sim Bin(n, p)$ pre každé $n \in \mathbb{N}$. Nech $x \in \mathbb{R}$. 
+Potom 
+\pause 
+$$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_{-\infty}^{x} e^{-t^2} dt$$
+\end{block}
+\end{frame}
+
+\subsection{Strojové učenie}
 % ## Neuronove siete
 % 
 % vypocet back-popagation (mozno staci aj delta-rule pre obycajny continuous
 % preceptron (du1))
-% 
+
+
+\begin{frame}
+\frametitle{Neurónové siete, Strojové učenie}
+\end{frame}
+
+\subsection{Grafika, Počitačové siete}
 % ## Grafika
 % 
 % Fourierove transformacie su uzasna vec, treba do dohladat z nejakych skript
@@ -278,19 +269,35 @@ $$e = \left(1 + \dfrac{1}{\infty}\right)^{\infty}$$
 % Kapitola "Matematicke zaklady spracovavania obrazu" (str. 75) zacina priamo
 % fourieroveou transformaciou. staci asi uviest zopar vzorcov odtialto ci rovno
 % screenshot
-%
+
+
+\begin{frame}
+\frametitle{Grafika, Počitačové siete (2)}
+\end{frame}
+
+\subsection{Kombinatorická analýza}
 % ## Kombat
 % 
 % konecny kalkul (ukazem domacu cislo 6, tie najdlhsie chutovky)
 % a poviem, ze sa to rata rovnako ako normalne integraly
 % 
 % porovnanie per partes v realnej a konecnej verzii ??
-% 
+
+\begin{frame}
+\frametitle{Kombinatorická analýza}
+\end{frame}
+
+\subsection{Teória programovania}
 % ## ZTP
 % 
 % pasaz o spojitych funckionaloch!! Kleeneho veta (veta 30) plus okolite definicie
 % zneju fajn :) (strana 38)
-% 
+
+
+\begin{frame}
+\frametitle{Základy teórie programovania}
+\end{frame}
+
 % # Zaver
 % 
 % snad vas to aspon trochu zaujalo, materialy viete najst tu:
