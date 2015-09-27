@@ -20,7 +20,6 @@ tretiak - informatik, blablabla.
 # Ako nas motivuju profaci?
 
 - je to povinne 
-- je z toho skuska! (pridaj ten obrazok :D)
 - je to na statniciach (!!)
 - rozvijame si mysel
 - ???
@@ -28,7 +27,7 @@ tretiak - informatik, blablabla.
 
 Zaver z toho? Ziadne pouzitie v realnom zivote (obrazok s razcestnikom)
 
-# Na co profaci zabudaju…
+# Na co profaci zabudaju...
 
 **Matalyzu potrebujete na matfyze!!**
 
@@ -45,7 +44,9 @@ Zakazdym vam poviem, ktore pojmy vam vysvetli pan docent Kubacek a kedy.
 
 # Predmety
 
-## ADS, TEA, …
+## UKTG!!
+
+## ADS, TEA, FOJA, ...
 
 O-notacia (staci ukazat definiciu asi)
 
