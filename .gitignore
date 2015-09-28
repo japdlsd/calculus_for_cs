@@ -29,3 +29,5 @@
 *.tex~
 *.vrb
 *.pdf
+
+*.markdown~
