@@ -81,6 +81,7 @@
 
 \usepackage[utf8x]{inputenc} %%  toto je pre citanie slovenskych symbolov
 \usepackage[slovak]{babel}   %%  aj toto :)
+\usepackage{xcolor}
 
 %----------------------------------------------------------------------------------------
 %   TITLE PAGE
@@ -94,7 +95,7 @@
 Fakulta matematiky, fyziky a informatiky \\ % Your institution for the title page
 Univerzita Komenského v Bratislave \\
 \medskip
-\textit{ksp.sk/$\sim$askar} % Your email address
+\url{ksp.sk/~askar} % Your email address
 }
 \date{29. septembra 2015} % Date, can be changed to a custom date
 
@@ -196,10 +197,6 @@ $$e = \left(1 + \dfrac{1}{\infty}\right)^{\infty}$$
 \end{figure}
 \end{frame}
 
-% # Na co profaci zabudaju…
-% 
-% **Matalyzu potrebujete na matfyze!!**
-
 \begin{frame}
 \frametitle{Na čo ale vyučujúci zabúdajú?}
 \pause
@@ -258,6 +255,31 @@ $$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_
 
 \begin{frame}
 \frametitle{Neurónové siete, Strojové učenie}
+\begin{figure}
+\includegraphics[height=0.6\textheight]{images/neural_net.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Neurónové siete, Strojové učenie}
+
+\textcolor{red}{Gradientová metóda} pri odvodení tzv. ''delta-rule''
+
+\def\rpartial{\textcolor{red}{\partial}}
+
+\begin{align*}
+\dfrac{\rpartial E_j}{\rpartial W_{jk}} (W_j) = \\
+%\dfrac{\partial \left( \sum_{p=1}^{t} \dfrac{1}{2} (d^{(p)}_j - y^{(p)}_j)^2 \right) }{\partial W_{jk}} (W_j)= \\
+%\sum_{p=1}^{t} \dfrac{\partial \left( \dfrac{1}{2} (d^{(p)}_j - y^{(p)}_j)^2 \right) }{\partial W_{jk}} (W_j)= \\
+%\sum_{p=1}^{t} \dfrac{\partial \left( \dfrac{1}{2} (d^{(p)}_j - y^{(p)}_j)^2 \right) }{\partial y^{(p)}_j}(y^{(p)}_j)     \dfrac{\partial y^{(p)}_j}{\partial W_{jk}} (W_j)= \\
+\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     \dfrac{\rpartial y^{(p)}_j} {\rpartial W_{jk}} (W_j)= \\
+%\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     \dfrac{\partial f(net_j^{(p)})} {\partial W_{jk}} (W_j)= \\
+%\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     \dfrac{\partial f(net_j^{(p)})}{\partial net_j^{(p)}}(net_j^{(p)}) \dfrac{\partial net_j^{(p)}}{\partial W_{jk}} (W_j)= \\
+%\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     f'(net_j^{(p)}) \dfrac{\partial net_j^{(p)}}{\partial W_{jk}} (W_j)= \\
+\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     f'(net_j^{(p)}) \dfrac{\rpartial \sum_{i=1}^{n} W_{ji} x_i^{(p)}}{\rpartial W_{jk}} (W_j)= \\
+\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     f'(net_j^{(p)}) x_k^{(p)} \\
+\end{align*}
+
 \end{frame}
 
 \subsection{Grafika, Počitačové siete}
@@ -270,32 +292,68 @@ $$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_
 % fourieroveou transformaciou. staci asi uviest zopar vzorcov odtialto ci rovno
 % screenshot
 
+\begin{frame}
+\frametitle{Grafika, Počitačové siete (2)}
+\begin{figure}
+\includegraphics[height=0.8\textheight]{images/fourier_signal.png}
+\end{figure}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Grafika, Počitačové siete (2)}
+\begin{block}{Fourierova transformácia}
+$$F\{f(x)\} = F(u) = \int_{-\infty}^{+\infty} f(x) \cdot [\cos{2\pi ux} - i \sin{2\pi ux}] ~ dx$$
+\end{block}
 \end{frame}
 
 \subsection{Kombinatorická analýza}
-% ## Kombat
-% 
-% konecny kalkul (ukazem domacu cislo 6, tie najdlhsie chutovky)
-% a poviem, ze sa to rata rovnako ako normalne integraly
-% 
-% porovnanie per partes v realnej a konecnej verzii ??
 
 \begin{frame}
 \frametitle{Kombinatorická analýza}
+\pause
+$$\sum_{k=0}^{n} k = 1 + 2 + \ldots + (n-1) + n \pause = \dfrac{n(n+1)}{2}$$
+\pause
+$$\sum_{k=0}^{n} k^2 = \pause \dfrac{n(n-1)(2n-1)}{6}$$
+\pause
+$$\sum_{k=0}^{n} k^3 = ?? \pause $$
+
+meh, tu je všeobecný vzorec:
+
+$$\sum_{n \geq 0} \textcolor{red}{k^m} x^n = (xD)^{\textcolor{red}{m}} \left(\dfrac{1}{1-x}\right)$$
 \end{frame}
 
-\subsection{Teória programovania}
-% ## ZTP
-% 
-% pasaz o spojitych funckionaloch!! Kleeneho veta (veta 30) plus okolite definicie
-% zneju fajn :) (strana 38)
+\begin{frame}
+\frametitle{Kombinatorická analýza}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 
+\column{.5\textwidth} % Left column and width
+\textbf{Matalýza}
+\begin{enumerate}
+\item<1-> $ D f(x) = \lim_{\tilde{x} \to x} \dfrac{f(\tilde{x}) - f(x)}{\tilde{x} - x}$
+\item<2-> $\int f(x) dx$
+\item<3-> $\int f~Du = fg - \int Df ~g $
+\end{enumerate}
+
+\column{.5\textwidth} % Right column and width
+\textbf{Kombat}
+\begin{enumerate}
+\item<1-> $ \Delta f (n) = f(n+1) - f(n)$
+\item<2-> $\sum f(n) \delta n$
+\item<3-> $\sum u ~ \Delta v = u v - \sum \Delta u ~ Ev$ ($E f(n) = f(n+1)$)
+\end{enumerate}
+\end{columns}
+\end{frame}
 
 \begin{frame}
-\frametitle{Základy teórie programovania}
+\frametitle{Záver?}
+\begin{itemize}
+  \item funkcionálne rady, topológia (Teória programovania, Verifikácia prográmov (aj databázy))
+  \item integrálny počet funkcií viacerých premenných (Moderná štatistika)
+  \item differenciálne rovnice (ľubovoľná fyzikálna (aj grafická) simulácia)
+  \item Taylorove rady = (obyčajné) generujúce funkcie (Kombinatorické štruktúry)
+  \item \ldots
+\end{itemize}
 \end{frame}
 
 % # Zaver
@@ -303,156 +361,35 @@ $$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_
 % snad vas to aspon trochu zaujalo, materialy viete najst tu:
 % (bit.ly link na github repozitar)
 
-
-
-%% TODO vymazat zvysok
-
-
-%------------------------------------------------
-\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
-%------------------------------------------------
-
-\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
-
 \begin{frame}
-\frametitle{Paragraphs of Text}
-Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
-
-Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+\frametitle{Záver?}
+\begin{figure}
+\includegraphics[height=0.8\textheight]{images/let_calculus_flow.jpg}
+\end{figure}
 \end{frame}
 
-%------------------------------------------------
-
 \begin{frame}
-\frametitle{Bullet Points}
+\frametitle{Kam ďalej?}
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+\item prečítajte si pozorne svoj študijný plán (najmä prerekvizity)
+\pause
+\item zvážte Matematickú analýzu (3) (gradient, differenciálne rovnice, etc.)
+\pause
+\item poznámky od Kamily ku MA(1) a (2): \url{http://ksp.sk/~kamila/ma/}
+\pause 
+\item možno aj Algebra (2) má význam \pause (však je to na štatniciach :D )
+\pause
+\item prezentáciu (a malý bonus pre aktívnych) najdete na mojej stránke: \url{ksp.sk/~askar}
 \end{itemize}
+\pause 
+
+\begin{LARGE}
+\begin{center}
+\textbf{Ďakujem za pozornost!}
+
+\end{center}
+\end{LARGE}
+
 \end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
-}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\Huge{\centerline{The End}}
-\end{frame}
-
-%----------------------------------------------------------------------------------------
 
 \end{document} 
