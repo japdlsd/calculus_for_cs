@@ -104,12 +104,6 @@ Univerzita Komenského v Bratislave \\
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
-
-% \begin{frame}
-% \frametitle{Overview} % Table of contents slide, comment this block out to remove it
-% \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-% \end{frame}
-
  
 %----------------------------------------------------------------------------------------
 %   PRESENTATION SLIDES
@@ -206,7 +200,6 @@ $$e = \left(1 + \dfrac{1}{\infty}\right)^{\infty}$$
 \end{frame}
 
 \section{Predmety}
-% ## UKTG !!
 
 \subsection{Efektívne algoritmy}
 
@@ -247,11 +240,6 @@ $$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_
 \end{frame}
 
 \subsection{Strojové učenie}
-% ## Neuronove siete
-% 
-% vypocet back-popagation (mozno staci aj delta-rule pre obycajny continuous
-% preceptron (du1))
-
 
 \begin{frame}
 \frametitle{Neurónové siete, Strojové učenie}
@@ -269,13 +257,7 @@ $$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_
 
 \begin{align*}
 \dfrac{\rpartial E_j}{\rpartial W_{jk}} (W_j) = \\
-%\dfrac{\partial \left( \sum_{p=1}^{t} \dfrac{1}{2} (d^{(p)}_j - y^{(p)}_j)^2 \right) }{\partial W_{jk}} (W_j)= \\
-%\sum_{p=1}^{t} \dfrac{\partial \left( \dfrac{1}{2} (d^{(p)}_j - y^{(p)}_j)^2 \right) }{\partial W_{jk}} (W_j)= \\
-%\sum_{p=1}^{t} \dfrac{\partial \left( \dfrac{1}{2} (d^{(p)}_j - y^{(p)}_j)^2 \right) }{\partial y^{(p)}_j}(y^{(p)}_j)     \dfrac{\partial y^{(p)}_j}{\partial W_{jk}} (W_j)= \\
 \sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     \dfrac{\rpartial y^{(p)}_j} {\rpartial W_{jk}} (W_j)= \\
-%\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     \dfrac{\partial f(net_j^{(p)})} {\partial W_{jk}} (W_j)= \\
-%\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     \dfrac{\partial f(net_j^{(p)})}{\partial net_j^{(p)}}(net_j^{(p)}) \dfrac{\partial net_j^{(p)}}{\partial W_{jk}} (W_j)= \\
-%\sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     f'(net_j^{(p)}) \dfrac{\partial net_j^{(p)}}{\partial W_{jk}} (W_j)= \\
 \sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     f'(net_j^{(p)}) \dfrac{\rpartial \sum_{i=1}^{n} W_{ji} x_i^{(p)}}{\rpartial W_{jk}} (W_j)= \\
 \sum_{p=1}^{t} (y^{(p)}_j - d^{(p)}_j)     f'(net_j^{(p)}) x_k^{(p)} \\
 \end{align*}
@@ -283,14 +265,6 @@ $$\lim_{n\to\infty}P \left[ \dfrac{X_n - np}{\sqrt{np(1-p)}} < x \right] = \int_
 \end{frame}
 
 \subsection{Grafika, Počitačové siete}
-% ## Grafika
-% 
-% Fourierove transformacie su uzasna vec, treba do dohladat z nejakych skript
-% (stacia ferkove). 
-% 
-% Kapitola "Matematicke zaklady spracovavania obrazu" (str. 75) zacina priamo
-% fourieroveou transformaciou. staci asi uviest zopar vzorcov odtialto ci rovno
-% screenshot
 
 \begin{frame}
 \frametitle{Grafika, Počitačové siete (2)}
@@ -355,11 +329,6 @@ $$\sum_{n \geq 0} \textcolor{red}{k^m} x^n = (xD)^{\textcolor{red}{m}} \left(\df
   \item \ldots
 \end{itemize}
 \end{frame}
-
-% # Zaver
-% 
-% snad vas to aspon trochu zaujalo, materialy viete najst tu:
-% (bit.ly link na github repozitar)
 
 \begin{frame}
 \frametitle{Záver?}
